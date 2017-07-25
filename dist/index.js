@@ -20,10 +20,6 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _odometer = require('odometer');
-
-var _odometer2 = _interopRequireDefault(_odometer);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -44,7 +40,8 @@ var ReactOdometer = function (_Component) {
   _createClass(ReactOdometer, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.odometer = new _odometer2.default(_extends({
+      var Odometer = require('odometer');
+      this.odometer = new Odometer(_extends({
         el: _reactDom2.default.findDOMNode(this),
         value: this.props.value
       }, this.props.options));
